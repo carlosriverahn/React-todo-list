@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import TaskForm from './components/TaskForm';
+import TodoList  from './components/TodoList'
 import './App.css';
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
   return (
     <div className="App">
       <TaskForm  newTask = {newTask}/>
+      {
+        todoList.map(elm => <TodoList newTask={elm}/>)
+      }
     </div>
   );
 }
