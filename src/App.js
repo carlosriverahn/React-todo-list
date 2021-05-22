@@ -16,6 +16,17 @@ function App() {
     const todoListFilter = todoList.filter((e, index) => index !== id);
     setTodoList(todoListFilter);
   }
+
+  const updateItem = (id, task) => {
+    const todoListUpdate = todoList.map((elm, index) => {
+      if(index === id){
+        elm = task;
+      }
+      return elm;
+    });
+    setTodoList(todoListUpdate);
+  }
+  
     
   return (
     <div className="App">
@@ -28,7 +39,8 @@ function App() {
                                                newTask={e}
                                                deleteItem={deleteItem}
                                                id={index}
-                                               />
+                                               edit={updateItem}
+          />
         )
       } 
       </div>  
