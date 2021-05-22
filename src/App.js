@@ -11,14 +11,28 @@ function App() {
       setTodoList([task, ...todoList])
   }
 
-  console.log(todoList);
-  
+  const deleteItem = (id) => {
+    // debugger
+    const todoListFilter = todoList.filter((e, index) => index !== id);
+    setTodoList(todoListFilter);
+  }
+    
   return (
     <div className="App">
+  
       <TaskForm  newTask = {newTask}/>
+  
+      <div className="todoList">
       {
-        todoList.map(elm => <TodoList newTask={elm}/>)
-      }
+        todoList.map((e, index) => <TodoList key={index}
+                                               newTask={e}
+                                               deleteItem={deleteItem}
+                                               id={index}
+                                               />
+        )
+      } 
+      </div>  
+
     </div>
   );
 }

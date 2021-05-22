@@ -1,13 +1,17 @@
 import React from 'react'
 
 function TodoList(props) {
+
+    const deleteItem = () => {
+        props.deleteItem(props.id)
+    }
     
     return (
         <div>
             <div className="todoList">
                 <span>{props.newTask}</span>
-                <span>edit</span>
-                <span>delete</span>
+                <button>edit</button>
+                <button onClick={deleteItem}>delete</button>
             </div>
         </div>
     )
