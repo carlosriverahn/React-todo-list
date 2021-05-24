@@ -28,9 +28,9 @@ function App() {
   }
   
   return (
-    <div className="App">
-      <h2>Todo List</h2>
-      <TaskForm  newTask = {newTask}/>
+    <div className="App mt-5">
+      <h2 >Todo List</h2>
+      <TaskForm newTask = {newTask}/>
   
       <div className="todoList">
       {

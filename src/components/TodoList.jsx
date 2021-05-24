@@ -30,9 +30,9 @@ function TodoList(props) {
             {
                 !editMode ?
                 <div className="todoList">
-                    <span>{props.newTask}</span>
-                    <button onClick={editModeDom}>edit</button>
-                    <button onClick={deleteItem}>delete</button>
+                    <span className="h4 m-5">{props.newTask}</span>
+                    <button className="btn btn-primary btn-sm m-2" onClick={editModeDom}>edit</button>
+                    <button className="btn btn-danger btn-sm m-2" onClick={deleteItem}>delete</button>
                 </div>
                 :
                 <form onSubmit={submitEdit} className="formEdit">

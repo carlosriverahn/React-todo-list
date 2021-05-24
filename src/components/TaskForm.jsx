@@ -21,15 +21,15 @@ function TaskForm(props) {
     
     return (
         <div>
-            <form onSubmit={Submit} className="form" action="">
+            <form onSubmit={Submit} className="form form-control" action="">
                 <input value={inputText} 
                         onChange={handleform}
                         placeholder="New Task"
                 />
-                <button data-testid="add" >ADD</button>
+                <button className="m-2 btn btn-button btn-dark" data-testid="add" >Add Task</button>
                 {
                     !validation &&
-                    <div className="validation"><span>Please enter a task</span></div>
+                    <div className="validation text-danger"><span>Please enter a task</span></div>
                 }
             </form>
 
