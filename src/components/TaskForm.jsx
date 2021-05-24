@@ -6,9 +6,8 @@ function TaskForm(props) {
 
     const handleform = (event) => {
         setInputText(event.target.value);
-        console.log(inputText);
     }
-
+ 
     const Submit = (event)=>{
         event.preventDefault();
         if(inputText.trim() !== ""){
@@ -23,12 +22,14 @@ function TaskForm(props) {
     return (
         <div>
             <form onSubmit={Submit} className="form" action="">
-                <span>Add task</span>
-                <input value={inputText} onChange={handleform}/>
-                <button>ADD</button>
+                <input value={inputText} 
+                        onChange={handleform}
+                        placeholder="New Task"
+                />
+                <button data-testid="add" >ADD</button>
                 {
                     !validation &&
-                    <div className="validation"><span>Test</span></div>
+                    <div className="validation"><span>Please enter a task</span></div>
                 }
             </form>
 

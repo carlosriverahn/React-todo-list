@@ -27,10 +27,9 @@ function App() {
     setTodoList(todoListUpdate);
   }
   
-    
   return (
     <div className="App">
-  
+      <h2>Todo List</h2>
       <TaskForm  newTask = {newTask}/>
   
       <div className="todoList">
